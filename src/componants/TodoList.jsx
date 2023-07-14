@@ -1,5 +1,5 @@
 
-export default function TodoList ({todos, changeTodoStatus}) {
+export default function TodoList ({todos, changeTodoStatus, deleteTodo}) {
 
 
     return(
@@ -14,6 +14,10 @@ export default function TodoList ({todos, changeTodoStatus}) {
                      checked={todo.done} 
                      onChange={() => changeTodoStatus(todo.id)}/>
                     {todo.name}
+                    <div 
+                    role="button"
+                    onClick={()=> {deleteTodo(todo.id)}}
+                    >X</div>
                 </li>
                 )
                 )}
